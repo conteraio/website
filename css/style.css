@@ -31,3 +31,7 @@ body {
 code {
   font-family: var(--font-geist-mono);
 }
+
+.navbar {
+  background-color: aquamarine;
+}
