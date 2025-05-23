@@ -1,0 +1,33 @@
+@import url('https://fonts.vercel.com/css2?family=Geist+Mono:wght@400;700&family=Geist+Sans:wght@300;400;500;600;700&display=swap');
+
+:root {
+  --font-geist-sans: 'Geist Sans', -apple-system, system-ui, sans-serif;
+  --font-geist-mono: 'Geist Mono', monospace;
+  
+  /* Font sizes */
+  --text-xs: 0.75rem;
+  --text-sm: 0.875rem;
+  --text-base: 1rem;
+  --text-lg: 1.125rem;
+  --text-xl: 1.25rem;
+  --text-2xl: 1.5rem;
+  
+  /* Font weights */
+  --font-light: 300;
+  --font-normal: 400;
+  --font-medium: 500;
+  --font-semibold: 600;
+  --font-bold: 700;
+}
+
+body {
+  font-family: var(--font-geist-sans);
+  font-size: var(--text-base);
+  font-weight: var(--font-normal);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: var(--font-geist-mono);
+}
