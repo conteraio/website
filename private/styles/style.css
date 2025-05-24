@@ -1,5 +1,5 @@
 @import url('https://fonts.vercel.com/css2?family=Geist+Mono:wght@400;700&family=Geist+Sans:wght@300;400;500;600;700&display=swap');
-
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css");
 :root {
   --font-geist-sans: 'Geist Sans', -apple-system, system-ui, sans-serif;
   --font-geist-mono: 'Geist Mono', monospace;
@@ -68,4 +68,13 @@ code {
 #footer {
   font-family: var(--font-geist-sans);
   color: #6EDF76;
+}
+
+.bi {
+  font-size: large;
+}
+
+.text-body-secondary {
+  color:#1F2933;
+  font-family: var(--font-geist-sans);
 }
