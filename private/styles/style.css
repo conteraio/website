@@ -3,7 +3,7 @@
 :root {
   --font-geist-sans: 'Geist Sans', -apple-system, system-ui, sans-serif;
   --font-geist-mono: 'Geist Mono', monospace;
-  
+
   /* Font sizes */
   --text-xs: 0.75rem;
   --text-sm: 0.875rem;
@@ -11,7 +11,7 @@
   --text-lg: 1.125rem;
   --text-xl: 1.25rem;
   --text-2xl: 1.5rem;
-  
+
   /* Font weights */
   --font-light: 300;
   --font-normal: 400;
@@ -26,6 +26,7 @@ body {
   font-weight: var(--font-normal);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: bisque;
 }
 
 code {
@@ -33,5 +34,38 @@ code {
 }
 
 .navbar {
-  background-color: aquamarine;
+  background-color: #1F2933;
+  font-family: var(--font-geist-sans);
+}
+
+.nav-link {
+  color: #DED5C8;
+  font-family: var(--font-geist-sans);
+}
+
+.btn-primary {
+  color: #DED5C8;
+  background-color: #1F2933;
+  border-color: #DED5C8;
+  font-family: var(--font-geist-sans);
+  --bs-btn-hover-bg: #{shade-color($bd-violet, 10%)};
+  --bs-btn-hover-border-color: #{shade-color($bd-violet, 10%)};
+}
+
+.btn-secondary {
+  color: #1F2933;
+  background-color: #6EDF76;
+  border-color: #6EDF76;
+  font-family: var(--font-geist-sans);
+  --bs-btn-hover-bg: #{shade-color($bd-violet, 10%)};
+  --bs-btn-hover-border-color: #{shade-color($bd-violet, 10%)};
+}
+
+.navbar-toggler {
+  background-color: #6EDF76;
+}
+
+#footer {
+  font-family: var(--font-geist-sans);
+  color: #6EDF76;
 }
