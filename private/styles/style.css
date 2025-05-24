@@ -1,8 +1,12 @@
 @import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css");
 
+/* =========================
+  CSS Variables & Base Font
+  ========================= */
 :root {
   --font-geist-sans: 'Geist Sans', -apple-system, system-ui, sans-serif;
   --font-geist-mono: 'Geist Mono', monospace;
+  --font-geist: 'Geist', -apple-system, system-ui, sans-serif;
 
   /* Font sizes */
   --text-xs: 0.75rem;
@@ -18,201 +22,240 @@
   --font-medium: 500;
   --font-semibold: 600;
   --font-bold: 700;
+
+  /* Colors */
+  --color-bg: #1F2933;
+  --color-bg-dropdown: #232c33;
+  --color-bg-dropdown-hover: #2c363d;
+  --color-text: #DED5C8;
+  --color-accent: #D53F71;
+}
+
+/* =========================
+  Reset & Normalization
+  ========================= */
+html {
+  box-sizing: border-box;
+  font-family: var(--font-geist);
+  font-size: 100%;
+  background: var(--color-bg);
+  color: var(--color-text);
+}
+
+*, *::before, *::after {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
 }
 
 body {
-  font-family: 'Geist', sans-serif;
+  font-family: var(--font-geist);
   font-size: var(--text-base);
   font-weight: var(--font-normal);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: #DED5C8;
+  background: var(--color-bg);
+  color: var(--color-text);
+  min-height: 100vh;
 }
 
-code {
-  font-family: 'Geist', sans-serif;
+/* =========================
+  Typography
+  ========================= */
+code, pre {
+  font-family: var(--font-geist-mono);
+  font-size: var(--text-sm);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-geist-sans);
+  color: var(--color-text);
+  font-weight: var(--font-bold);
+  line-height: 1.2;
+  margin-bottom: 0.5em;
+}
+
+/* =========================
+  Navbar & Navigation
+  ========================= */
+.navbar,
+.navbar * {
+  font-family: var(--font-geist);
 }
 
 .navbar {
-  background-color: #1F2933;
-  font-family: 'Geist', sans-serif;
+  background: var(--color-bg);
   font-size: var(--text-base);
   font-weight: var(--font-bold);
-  align-items: center;
-  /* Center children horizontally */
   display: flex;
+  align-items: center;
   justify-content: space-between;
-  padding: auto;
+  padding: 0 1rem;
+  min-height: 3.5rem;
 }
 
-.nav-link,
-.nav-link:visited,
-.nav-link:active,
-.nav-link:focus,
-.nav-link:hover {
-  color: #DED5C8;
-  font-family: 'Geist', sans-serif;
-  &:hover {
-    color: #D53F71;
-  }
-  text-decoration: none;
-}
-
-.nav-item {
-  padding-right: 5%;
-  font-family: 'Geist', sans-serif;
-}
-
-.btn-primary {
-  background-color: #1F2933;
-  border-color: #DED5C8;
-  font-family: 'Geist', sans-serif;
-  --bs-btn-color: var(--bs-white);
-  --bs-btn-hover-bg: #D53F71;
-  --bs-btn-hover-border-color: #DED5C8;
-}
-
-.btn-secondary {
-  background-color: #D53F71;
-  border-color: #DED5C8;
-  font-family: 'Geist', sans-serif;
-  --bs-btn-hover-bg: #1F2933;
-  --bs-btn-hover-border-color: #DED5C8;
-  --bs-btn-hover-color: #DED5C8;
-}
-
-.navbar-toggler {
-  background-color: #D53F71;
-  font-family: 'Geist', sans-serif;
-}
-
-#footer {
-  font-family: 'Geist', sans-serif;
-  color: #D53F71;
-}
-
-.bi {
-  font-size: large;
-  font-family: 'Geist', sans-serif;
-
-}
-
-.offcanvas {
-  background-color: #1F2933;
-  font-family: 'Geist', sans-serif;
-}
-
-/* Navigation and Dropdown Styles */
 .nav-container {
   display: flex;
   align-items: center;
-  justify-content: center;
-  font-family: 'Geist', sans-serif;
+  gap: 1.5rem;
+  font-family: var(--font-geist);
 }
 
-/* Base nav link styles */
+.nav-item {
+  padding-right: 1.5rem;
+}
+
 .nav-link {
-  color: #DED5C8;
+  color: var(--color-text);
   text-decoration: none;
-  font-family: 'Geist', sans-serif;
+  transition: color 0.2s;
+  padding: 0.5rem 0;
+  display: inline-block;
 }
 
-/* Dropdown menu styles */
+.nav-link:hover,
+.nav-link:focus {
+  color: var(--color-accent);
+  outline: none;
+}
+
+/* =========================
+  Buttons
+  ========================= */
+.btn-primary,
+.btn-secondary,
+.navbar-toggler {
+  font-family: var(--font-geist);
+  border-width: 2px;
+  border-style: solid;
+  border-radius: 0.375rem;
+  padding: 0.375rem 1rem;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s, border-color 0.2s;
+}
+
+.btn-primary {
+  background: var(--color-bg);
+  border-color: var(--color-text);
+  color: var(--color-text);
+}
+
+.btn-primary:hover,
+.btn-primary:focus {
+  background: var(--color-accent);
+  border-color: var(--color-accent);
+  color: var(--color-text);
+}
+
+.btn-secondary {
+  background: var(--color-accent);
+  border-color: var(--color-accent);
+  color: var(--color-text);
+}
+
+.btn-secondary:hover,
+.btn-secondary:focus {
+  background: var(--color-bg);
+  border-color: var(--color-accent);
+  color: var(--color-text);
+}
+
+.navbar-toggler {
+  background: var(--color-accent);
+  border-color: var(--color-accent);
+  color: var(--color-text);
+}
+
+/* =========================
+  Icons
+  ========================= */
+.bi {
+  font-size: 1.25em;
+  color: var(--color-accent);
+  vertical-align: middle;
+}
+
+/* =========================
+  Offcanvas
+  ========================= */
+.offcanvas {
+  background: var(--color-bg);
+  font-family: var(--font-geist);
+}
+
+/* =========================
+  Footer
+  ========================= */
+#footer {
+  font-family: var(--font-geist);
+  color: var(--color-accent);
+  padding: 1rem 0;
+  text-align: center;
+}
+
+/* =========================
+  Dropdown Menu
+  ========================= */
 .dropdown-menu {
-  background-color: #232c33;
+  background: var(--color-bg-dropdown);
   border: none;
   padding: 0.5rem 0;
-  font-family: 'Geist', sans-serif;
+  font-family: var(--font-geist);
+  min-width: 10rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
 }
 
-/* Dropdown items - covers both links and buttons */
 .dropdown-menu .dropdown-item,
 .dropdown-menu a {
-  color: #DED5C8;
-  background-color: #232c33;
+  color: var(--color-text) !important;
+  background: var(--color-bg-dropdown) !important;
   padding: 0.5rem 1rem;
-  font-family: 'Geist', sans-serif;
-  transition: background-color 0.2s ease;
+  text-decoration: none !important;
+  font-family: var(--font-geist);
+  transition: background 0.2s, color 0.2s;
+  border-radius: 0.25rem;
 }
 
-/* Hover and active states */
 .dropdown-menu .dropdown-item:hover,
-.dropdown-menu .dropdown-item:active,
 .dropdown-menu .dropdown-item:focus,
+.dropdown-menu .dropdown-item:active,
 .dropdown-menu a:hover,
-.dropdown-menu a:active,
-.dropdown-menu a:focus {
-  color: #DED5C8;
-  background-color: #2c363d;
-  outline: none;
-  font-family: 'Geist', sans-serif;
-}
-
-/* Adjust the selector to match your dropdown links */
-.dropdown-menu a,
-.dropdown-menu a:visited,
-.dropdown-menu a:active,
 .dropdown-menu a:focus,
-.dropdown-menu a:hover {
-  color: #DED5C8 !important;
-  /* Force white text */
-  background: #232c33 !important;
-  /* Match your dropdown background */
-  text-decoration: none;
-  outline: none;
-  font-family: 'Geist', sans-serif;
-}
-
-nav .dropdown-menu a,
-nav .dropdown-menu a:visited,
-nav .dropdown-menu a:active,
-nav .dropdown-menu a:focus,
-nav .dropdown-menu a:hover {
-  color: #DED5C8 !important;
-  background-color: #232c33 !important;
-  /* or your dropdown background */
-  text-decoration: none !important;
+.dropdown-menu a:active {
+  color: var(--color-text) !important;
+  background: var(--color-bg-dropdown-hover) !important;
   outline: none !important;
-  font-family: 'Geist', sans-serif;
 }
 
-/* Target all prompt navigation links and their states */
-prompt nav .dropdown-menu a,
-prompt nav .dropdown-menu .dropdown-item,
-prompt nav .dropdown-menu a:link,
-prompt nav .dropdown-menu a:visited,
-prompt nav .dropdown-menu a:hover,
-prompt nav .dropdown-menu a:active,
-prompt nav .dropdown-menu a:focus {
-  color: #DED5C8 !important;
-  background-color: #232c33 !important;
-  text-decoration: none !important;
-  font-family: 'Geist', sans-serif;
-}
-
-/* Ensure no color change on click/touch */
-prompt nav .dropdown-menu a:active,
-prompt nav .dropdown-menu .dropdown-item:active {
-  color: #DED5C8 !important;
-  background-color: #232c33 !important;
-  font-family: 'Geist', sans-serif;
-}
-
-prompt a,
-prompt a:visited,
-prompt a:active,
-prompt a:focus,
-prompt a:hover {
-  color: #DED5C8;
-  text-decoration: none;
-  font-family: 'Geist', sans-serif;
-}
-
+/* =========================
+  Prompt Styles (if used)
+  ========================= */
 prompt,
-prompt:visited,
-prompt:active,
-prompt:focus,
-prompt:hover {
-  color: #DED5C8;
-  font-family: 'Geist', sans-serif;
+prompt a,
+prompt nav .dropdown-menu a,
+prompt nav .dropdown-menu .dropdown-item {
+  color: var(--color-text) !important;
+  background: var(--color-bg-dropdown) !important;
+  text-decoration: none !important;
+  font-family: var(--font-geist);
 }
+
+prompt a:hover,
+prompt a:focus,
+prompt nav .dropdown-menu a:hover,
+prompt nav .dropdown-menu a:focus,
+prompt nav .dropdown-menu .dropdown-item:hover,
+prompt nav .dropdown-menu .dropdown-item:focus {
+  background: var(--color-bg-dropdown-hover) !important;
+}
+
+/* =========================
+  Utility Classes
+  ========================= */
+.text-accent { color: var(--color-accent) !important; }
+.bg-accent { background: var(--color-accent) !important; }
+.text-base { color: var(--color-text) !important; }
+.bg-base { background: var(--color-bg) !important; }
+.font-bold { font-weight: var(--font-bold) !important; }
+.font-normal { font-weight: var(--font-normal) !important; }
+.font-light { font-weight: var(--font-light) !important; }
