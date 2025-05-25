@@ -15,6 +15,7 @@
   --text-lg: 1.125rem;
   --text-xl: 1.25rem;
   --text-2xl: 1.5rem;
+  --text-xxl: 2rem;
 
   /* Font weights */
   --font-light: 300;
@@ -43,7 +44,9 @@ html {
   color: var(--color-text);
 }
 
-*, *::before, *::after {
+*,
+*::before,
+*::after {
   box-sizing: inherit;
   margin: 0;
   padding: 0;
@@ -63,12 +66,18 @@ body {
 /* =========================
   Typography
   ========================= */
-code, pre {
+code,
+pre {
   font-family: var(--font-geist-mono);
   font-size: var(--text-sm);
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-family: var(--font-geist-sans);
   color: var(--color-text);
   font-weight: var(--font-bold);
@@ -203,7 +212,7 @@ h1, h2, h3, h4, h5, h6 {
   padding: 0.5rem 0;
   font-family: var(--font-geist);
   min-width: 10rem;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
 }
 
 .dropdown-menu .dropdown-item,
@@ -253,10 +262,49 @@ prompt nav .dropdown-menu .dropdown-item:focus {
 /* =========================
   Utility Classes
   ========================= */
-.text-accent { color: var(--color-accent) !important; }
-.bg-accent { background: var(--color-accent) !important; }
-.text-base { color: var(--color-text) !important; }
-.bg-base { background: var(--color-bg) !important; }
-.font-bold { font-weight: var(--font-bold) !important; }
-.font-normal { font-weight: var(--font-normal) !important; }
-.font-light { font-weight: var(--font-light) !important; }
+.text-accent {
+  color: var(--color-accent) !important;
+}
+
+.bg-accent {
+  background: var(--color-accent) !important;
+}
+
+.text-base {
+  color: var(--color-text) !important;
+}
+
+.bg-base {
+  background: var(--color-bg) !important;
+}
+
+.font-bold {
+  font-weight: var(--font-bold) !important;
+}
+
+.font-normal {
+  font-weight: var(--font-normal) !important;
+}
+
+.font-light {
+  font-weight: var(--font-light) !important;
+}
+
+#solution .bi {
+  font-size: 4rem;
+
+}
+
+.accordion {
+  --bs-accordion-bg: #DED5C8;
+  --bs-accordion-color: #1F2933;
+  --bs-accordion-border-color: transparent;
+  --bs-accordion-active-color: #DED5C8;
+  --bs-accordion-active-bg: #D53F71;
+}
+
+.card {
+  --bs-card-color: #DED5C8;
+  --bs-card-border-color:  #DED5C8;
+  --bs-card-bg: #1F2933;
+}
